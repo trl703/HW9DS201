@@ -1,0 +1,27 @@
+---
+title: "HW 9"
+author: "Tracie-Lynn Lamoreux"
+date: "2023-04-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+
+```{r}
+av <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
+
+deaths <- av %>%
+  pivot_longer(cols = Death1:Death5, names_to = "Time", values_to = "Death") %>%
+  mutate(Time = parse_number(Time),
+         Death = ifelse(is.na(Death), "", ifelse(Death == "YES", "yes", "no")))
+
+returns <- av %>%
+  pivot_longer(cols = Return1:Return5, names_to = "Time", values_to = "Return") %>%
+  mutate(Time = parse_number(Time),
+         Return = ifelse(is.na(Return), "", ifelse(Return == "YES", "yes", "no")))
+```
