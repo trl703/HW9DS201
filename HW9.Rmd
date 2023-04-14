@@ -15,15 +15,16 @@ library(ggplot2)
 ```{r, include = FALSE}
 av <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
 
+my_cols<- c("Death1","Death2","Death3","Death4","Death5")
 deaths <- av %>%
-  pivot_longer(cols = Death1:Death5, names_to = "Time", values_to = "Death") %>%
+  pivot_longer(cols = my_cols, names_to = "Time", values_to = "Death") %>%
   mutate(Time = parse_number(Time),
-         Death = ifelse(is.na(Death), "", ifelse(Death == "YES", "yes", "no")))
-
+         Death = ifelse(Death == "","", ifelse(Death == "YES", "yes", "no")))
+my_cols_return<- c("Return1","Return2","Return3","Return4","Return5")
 returns <- av %>%
-  pivot_longer(cols = Return1:Return5, names_to = "Time", values_to = "Return") %>%
+  pivot_longer(cols = my_cols_return, names_to = "Time", values_to = "Return") %>%
   mutate(Time = parse_number(Time),
-         Return = ifelse(is.na(Return), "", ifelse(Return == "YES", "yes", "no")))
+         Return = ifelse(Return == "","", ifelse(Return == "YES", "yes", "no")))
 ```
 
 Tracie-Lynn Fact Check:</br>
