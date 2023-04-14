@@ -12,7 +12,7 @@ library(ggplot2)
 ```
 
 
-```{r}
+```{r, include = FALSE}
 av <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
 
 deaths <- av %>%
@@ -25,3 +25,14 @@ returns <- av %>%
   mutate(Time = parse_number(Time),
          Return = ifelse(is.na(Return), "", ifelse(Return == "YES", "yes", "no")))
 ```
+
+Tracie-Lynn Fact Check:</br>
+"and on 57 occasions the individual made a comeback." 
+```{r, include = FALSE}
+new_return<- returns %>% filter(Return == "yes")
+new_return<- new_return %>% filter(Name.Alias != "")
+unique<- unique(new_return$Name.Alias)
+numberofuniquereturns<- length(unique)
+```
+This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`.
+
