@@ -56,3 +56,14 @@ chance_return_1
 
 ```
 This statement is True. There is a 2-in-3 chance that a member of the avengers returned from their first death.
+
+Nic Fact Check:
+"at least 69 people had died at least one time after joining the team".
+```{r}
+death_check <- deaths %>% filter(Time == 1, Death == "yes")
+unique2 <- unique(death_check$URL)
+death_count <- length(unique2)
+death_count
+death_count / 173
+```
+This statement is TRUE. The amount of unique deaths for a character is equal to 69 and the percentage rounds to 40% as stated in the article.
