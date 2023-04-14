@@ -1,9 +1,17 @@
 ---
 title: "HW 9"
-author: "Tracie-Lynn Lamoreux, Macy Schanbacher"
+author: "Tracie-Lynn Lamoreux, Macy Schanbacher, Nic Rhoads"
 date: "2023-04-13"
 output: html_document
 ---
+
+Members
+ - Tracie-Lynn Lamoreux
+ - Macy Schanbacher
+ - Nic Rhoads 
+
+Repo Link
+https://github.com/trl703/HW9DS201
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
