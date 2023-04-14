@@ -31,11 +31,10 @@ Tracie-Lynn Fact Check:</br>
 "and on 57 occasions the individual made a comeback." 
 ```{r, include = FALSE}
 new_return<- returns %>% filter(Return == "yes")
-new_return<- new_return %>% filter(Name.Alias != "")
-unique<- unique(new_return$Name.Alias)
+unique<- unique(new_return$URL)
 numberofuniquereturns<- length(unique)
 ```
-This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`.
+This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`. However, if you were to include repeated returns, there are 57. 
 
 Macy's Fact Check:
 "There’s a 2-in-3 chance that a member of the Avengers returned from their first stint in the afterlife"
