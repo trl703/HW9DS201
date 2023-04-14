@@ -1,6 +1,6 @@
 ---
 title: "HW 9"
-author: "Tracie-Lynn Lamoreux"
+author: "Tracie-Lynn Lamoreux, Macy Schanbacher"
 date: "2023-04-13"
 output: html_document
 ---
@@ -37,3 +37,15 @@ numberofuniquereturns<- length(unique)
 ```
 This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`.
 
+Macy's Fact Check:
+"There’s a 2-in-3 chance that a member of the Avengers returned from their first stint in the afterlife"
+
+```{r}
+total_avengers_dead = 69 #from Nic calculations
+
+return_1 <- returns %>% filter(Time == 1, Return == 'yes')
+chance_return_1 = nrow(return_1) / total_avengers_dead
+chance_return_1
+
+```
+This statement is True. There is a 2-in-3 chance that a member of the avengers returned from their first death.
