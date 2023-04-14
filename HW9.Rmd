@@ -34,5 +34,5 @@ new_return<- returns %>% filter(Return == "yes")
 unique<- unique(new_return$URL)
 numberofuniquereturns<- length(unique)
 ```
-This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`.
+This statement is FALSE. The number of returns for a unique character is = to `r numberofuniquereturns`. However, if you were to include repeated returns, there are 57. 
 
